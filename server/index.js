@@ -6,7 +6,7 @@ const userRoute= require('./route/userRoute');
 const noteRoute = require('./route/noteRoute');
 
 app.use('/*',cors({
-    origin: ['http://localhost:5173', 'https://node-nest-psi.vercel.app'], 
+    origin: ['https://node-nest-psi.vercel.app'], 
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials:true,
