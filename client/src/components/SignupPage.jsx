@@ -16,7 +16,7 @@ const SignupPage = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-        const response = await axios.post('http://localhost:3000/api/user/signup',
+        const response = await axios.post('https://nodenest-ww5l.onrender.com/api/user/signup',
             postInputs,{
                 withCredentials:true
             }

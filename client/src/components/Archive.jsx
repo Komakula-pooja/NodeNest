@@ -15,7 +15,7 @@ const Archive=() => {
   const fetchNotes = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/api/notes/note/archived', {
+      const response = await axios.get('https://nodenest-ww5l.onrender.com/api/notes/note/archived', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('Token')}`
         }
@@ -31,7 +31,7 @@ const Archive=() => {
 
   const HandleUnArchive = async (noteId) => {
     try{
-      const res = await axios.put(`http://localhost:3000/api/notes/${noteId}/unarchive`,
+      const res = await axios.put(`https://nodenest-ww5l.onrender.com/api/notes/${noteId}/unarchive`,
         {},
         {
           headers: { 
@@ -51,7 +51,7 @@ const Archive=() => {
   // console.log('Authorization', `Bearer ${localStorage.getItem('Token')}`);
   // console.log(noteId);
   try{
-    const res = await axios.put(`http://localhost:3000/api/notes/${noteId}/trash`,
+    const res = await axios.put(`https://nodenest-ww5l.onrender.com/api/notes/${noteId}/trash`,
       {},
       {
         headers: {

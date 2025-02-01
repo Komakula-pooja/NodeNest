@@ -20,7 +20,7 @@ const Search = () => {
 
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/notes/note/search?keyword=${query}`,
+          `https://nodenest-ww5l.onrender.com/api/notes/note/search?keyword=${query}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -43,7 +43,7 @@ const Search = () => {
   const HandleArchive = async (noteId) => {
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/notes/${noteId}/archive`,
+        `https://nodenest-ww5l.onrender.com/api/notes/${noteId}/archive`,
         {},
         {
           headers: {
@@ -62,7 +62,7 @@ const Search = () => {
   const HandleDelete = async (noteId) => {
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/notes/${noteId}/trash`,
+        `https://nodenest-ww5l.onrender.com/api/notes/${noteId}/trash`,
         {},
         {
           headers: {

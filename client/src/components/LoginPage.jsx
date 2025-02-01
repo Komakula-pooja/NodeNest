@@ -14,7 +14,7 @@ const LoginPage = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-        const response = await axios.post('http://localhost:3000/api/user/login',
+        const response = await axios.post('https://nodenest-ww5l.onrender.com/api/user/login',
             postInputs
         );
         localStorage.setItem('Token', response.data.jwtToken);

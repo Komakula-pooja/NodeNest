@@ -14,7 +14,7 @@ const Trash = () => {
   const fetchNotes = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/api/notes/note/trashed', {
+      const response = await axios.get('https://nodenest-ww5l.onrender.com/api/notes/note/trashed', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('Token')}`
         }
@@ -30,7 +30,7 @@ const Trash = () => {
 
   const HandleRestore = async (noteId) => {
     try{
-      const res = await axios.put(`http://localhost:3000/api/notes/${noteId}/restore`,
+      const res = await axios.put(`https://nodenest-ww5l.onrender.com/api/notes/${noteId}/restore`,
         {},
         {
           headers: {

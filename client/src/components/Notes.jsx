@@ -26,7 +26,7 @@ const Notes = () => {
   const fetchNotes = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/api/notes', {
+      const response = await axios.get('https://nodenest-ww5l.onrender.com/api/notes', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('Token')}`
         }
@@ -42,7 +42,7 @@ const Notes = () => {
 
   const HandleArchive = async (noteId) => {
         try{
-          const res = await axios.put(`http://localhost:3000/api/notes/${noteId}/archive`,
+          const res = await axios.put(`https://nodenest-ww5l.onrender.com/api/notes/${noteId}/archive`,
             {},
             {
               headers: { 
@@ -62,7 +62,7 @@ const Notes = () => {
     // console.log('Authorization', `Bearer ${localStorage.getItem('Token')}`);
     // console.log(noteId);
     try{
-      const res = await axios.put(`http://localhost:3000/api/notes/${noteId}/trash`,
+      const res = await axios.put(`https://nodenest-ww5l.onrender.com/api/notes/${noteId}/trash`,
         {},
         {
           headers: {
@@ -86,7 +86,7 @@ const Notes = () => {
     e.preventDefault();
      const newNote = { title, content, fontSize, fontStyle, textColor, backgroundColor };
     try {
-      const result=await axios.post('http://localhost:3000/api/notes', 
+      const result=await axios.post('https://nodenest-ww5l.onrender.com/api/notes', 
         newNote,  
         {
           headers: { 
