@@ -95,7 +95,7 @@ const Home = () => {
           </ul>
         </div>
 
-        <div className="w-full sm:w-3/4 bg-gray-900 text-white p-4">
+        <div className="w-full sm:w-3/4 bg-gray-900 text-white p-4 h-full min-h-screen overflow-y-auto">
           {renderActivePage()}
         </div>
       </div>

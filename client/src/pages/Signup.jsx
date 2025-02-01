@@ -4,7 +4,7 @@ import NotePad from '../components/NotePad';
 
 const Signup = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2">
+    <div className="grid bg-black grid-cols-1 lg:grid-cols-2">
         <div>
             <SignupPage />
         </div>
