@@ -5,21 +5,25 @@ require('dotenv').config();
 const userRoute= require('./route/userRoute');
 const noteRoute = require('./route/noteRoute');
 
+const allowedOrigins = [
+    'https://node-nest-psi.vercel.app',
+    'http://localhost:5173' 
+];
+
 app.use('/*',cors({
-    origin: ['https://node-nest-psi.vercel.app'], 
+    origin: allowedOrigins, 
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials:true,
 }))
   
-app.options('/*', (c) => {
-c.header('Access-Control-Allow-Origin','https://node-nest-psi.vercel.app' );
-c.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-c.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-c.header('Access-Control-Allow-Credentials', 'true');
-return c.json({ message: 'Preflight OK' });
+app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.sendStatus(200);
 });
-
 connectDB();
 
 app.use('/api/user', userRoute);
