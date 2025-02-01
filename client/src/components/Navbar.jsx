@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="relative">
           <div
             className="p-2 rounded-full hover:bg-gray-700 cursor-pointer"
-            onClick={() => setShowLogout(!showLogout)} // Toggle logout button on click
+            onClick={() => setShowLogout(!showLogout)} 
           >
             <FaSignOutAlt className="text-2xl text-blue-300" />
           </div>

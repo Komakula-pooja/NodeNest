@@ -19,8 +19,7 @@ const Search = () => {
       setLoading(true);
 
       try {
-        const res = await axios.get(
-          `https://nodenest-ww5l.onrender.com/api/notes/note/search?keyword=${query}`,
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/notes/note/search?keyword=${query}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -42,8 +41,7 @@ const Search = () => {
 
   const HandleArchive = async (noteId) => {
     try {
-      const res = await axios.put(
-        `https://nodenest-ww5l.onrender.com/api/notes/${noteId}/archive`,
+      const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/notes/${noteId}/archive`,
         {},
         {
           headers: {
@@ -62,7 +60,7 @@ const Search = () => {
   const HandleDelete = async (noteId) => {
     try {
       const res = await axios.put(
-        `https://nodenest-ww5l.onrender.com/api/notes/${noteId}/trash`,
+        `${import.meta.env.VITE_API_URL}/api/notes/${noteId}/trash`,
         {},
         {
           headers: {
