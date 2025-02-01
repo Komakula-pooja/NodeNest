@@ -1,6 +1,6 @@
 import React from 'react'
-import SignupPage from '../components/SignupPage'
-import Icon from '../components/icon'
+import SignupPage from '../components/SignupPage';
+import NotePad from '../components/NotePad';
 
 const Signup = () => {
   return (
@@ -9,7 +9,7 @@ const Signup = () => {
             <SignupPage />
         </div>
         <div className="hidden lg:block">
-            <Icon />
+            <NotePad />
         </div>
     </div>
   )

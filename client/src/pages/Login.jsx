@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginPage from '../components/LoginPage'
-import Icon from '../components/icon'
+import NotePad from '../components/NotePad'
 
 
 const Login = () => {
@@ -10,7 +10,7 @@ const Login = () => {
             <LoginPage />
         </div>
         <div className="hidden lg:block">
-            <Icon />
+            <NotePad />
         </div>
     </div>
   )
