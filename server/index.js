@@ -6,14 +6,14 @@ const userRoute= require('./route/userRoute');
 const noteRoute = require('./route/noteRoute');
 
 app.use('/*',cors({
-    origin: ['http://localhost:5173', 'https://node-nest-psi.vercel.app/'], 
+    origin: ['http://localhost:5173', 'https://node-nest-psi.vercel.app'], 
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials:true,
 }))
   
 app.options('/*', (c) => {
-c.header('Access-Control-Allow-Origin');
+c.header('Access-Control-Allow-Origin','https://node-nest-psi.vercel.app' );
 c.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 c.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 c.header('Access-Control-Allow-Credentials', 'true');
