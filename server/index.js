@@ -11,7 +11,7 @@ const allowedOrigins = [
     'http://localhost:5173' 
 ];
 
-app.use('/*',cors({
+app.use(cors({
     origin: allowedOrigins, 
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowHeaders: ['Content-Type', 'Authorization'],
