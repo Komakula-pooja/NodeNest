@@ -4,6 +4,7 @@ const connectDB = require('./config/db');
 require('dotenv').config();
 const userRoute= require('./route/userRoute');
 const noteRoute = require('./route/noteRoute');
+const {deleteOldTrashedNotes} = require('./service/noteService');
 
 const allowedOrigins = [
     'https://node-nest-psi.vercel.app',
@@ -28,6 +29,10 @@ connectDB();
 
 app.use('/api/user', userRoute);
 app.use('/api/notes',noteRoute);
+
+setInterval(() => {
+    deleteOldTrashedNotes();
+}, 24 * 60 * 60 * 1000);
 
 
 const PORT = process.env.PORT || 3000;
